@@ -11,14 +11,16 @@
  * via the `x-dev-identity` header) can act as a different tenant and prove that
  * tenant isolation holds.
  */
+// Valid v4-format UUIDs (correct version/variant bits) so they pass the same
+// strict z.uuid() validation the API applies to real ids.
 export const DEV_IDENTITIES = {
   tenantA: {
-    tenantId: "00000000-0000-0000-0000-0000000000a1",
-    userId: "00000000-0000-0000-0000-0000000000a2",
+    tenantId: "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+    userId: "a0000000-0000-4000-8000-000000000001",
   },
   tenantB: {
-    tenantId: "00000000-0000-0000-0000-0000000000b1",
-    userId: "00000000-0000-0000-0000-0000000000b2",
+    tenantId: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+    userId: "b0000000-0000-4000-8000-000000000002",
   },
 } as const;
 
